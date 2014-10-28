@@ -44,6 +44,8 @@ gem 'bourbon'
 gem 'neat'
 gem 'kaminari'
 gem 'simple_form'
+gem 'dom_id'
+gem 'jquery-ui-rails'
 
 group :development, :test do
   gem 'better_errors'

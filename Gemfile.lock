@@ -57,11 +57,15 @@ GEM
     did_you_mean (0.7.0)
       binding_of_caller
     docile (1.1.5)
+    dom_id (0.1.0)
+      hoe (>= 1.2.1)
     erubis (2.7.0)
     execjs (2.2.2)
     faker (1.4.3)
       i18n (~> 0.5)
     hike (1.2.3)
+    hoe (3.13.0)
+      rake (>= 0.8, < 11.0)
     i18n (0.6.11)
     jbuilder (2.2.3)
       activesupport (>= 3.0.0, < 5)
@@ -69,6 +73,8 @@ GEM
     jquery-rails (3.1.2)
       railties (>= 3.0, < 5.0)
       thor (>= 0.14, < 2.0)
+    jquery-ui-rails (5.0.2)
+      railties (>= 3.2.16)
     json (1.8.1)
     kaminari (0.16.1)
       actionpack (>= 3.0.0)
@@ -181,9 +187,11 @@ DEPENDENCIES
   bourbon
   coffee-rails (~> 4.0.0)
   did_you_mean
+  dom_id
   faker
   jbuilder (~> 2.0)
   jquery-rails
+  jquery-ui-rails
   kaminari
   neat
   pg

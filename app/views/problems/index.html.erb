@@ -8,12 +8,16 @@
 <% @sorted_problems = @problems.sort_by(&:created_at) %>
 <% @sorted_problems.each do |p| %>
   <% unless p.resolved %>
+    <div id="<%= dom_id(p) %>">
     <strong><%= truncate(p.description, length: 50, omission: '...?') %></strong>
     <%= link_to "HALP", problem_path(p.id) %>
     <br>
     Asked by <%= p.user.name %>
     on <%= p.created_at.to_formatted_s(format = :short) %>
-    <br>
+    <% if p.user == current_user %>
+      <%= link_to "Resolve", resolve_path(p), method: :patch, remote: true, title: "resolve"  %>
+    <% end %>
+    </div>
     <br>
   <% end %>
 <% end %>

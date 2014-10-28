@@ -39,6 +39,7 @@ class ProblemsControllerTest < ActionController::TestCase
         assert_equal "You've got a problem", email.subject
       end
     end
+  end
 
   context "request GET :index" do
     setup { get :index, nil, {current_user_id: @user.id}}
@@ -54,13 +55,24 @@ class ProblemsControllerTest < ActionController::TestCase
   end
 
   context "request PATCH :resolve" do
-    setup { patch :resolve, { id: @problem}, {current_user_id: @user.id} }
-    should "resolve the problem" do
-      assert assigns[:problem].resolved
+    context "with html format" do
+      setup { patch :resolve, { id: @problem, format: "html" }, {current_user_id: @user.id} }
+      should "resolve the problem" do
+        assert assigns[:problem].resolved
+      end
+      should "redirect to problems page" do
+        assert_redirected_to root_path
+      end
     end
-    should "redirect to problems page" do
-      assert_redirected_to root_path
+    context "with js format" do
+      setup { patch :resolve, { id: @problem, format: "js" }, {current_user_id: @user.id} }
+      should "resolve the problem" do
+        assert assigns[:problem].resolved
+      end
+      should respond_with(:ok)
+      should_eventually "fade out and remove the problem entry" do
+        # ???
+      end
     end
   end
  end
-end
