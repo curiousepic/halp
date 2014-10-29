@@ -3,9 +3,9 @@
 one:
   name: Cat
   email: cat@home.com
-  password_digest: MyString
+  password_digest: <%= password_digest %>
 
 two:
   name: Dog
   email: dog@yard.com
-  password_digest: MyString
+  password_digest: <%= password_digest %>

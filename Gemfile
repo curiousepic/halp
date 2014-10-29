@@ -55,6 +55,8 @@ group :development, :test do
   gem "pry-byebug"
   gem 'shoulda'
   gem 'did_you_mean'
+  gem 'capybara'
+  gem "selenium-webdriver"
 
 end
 
