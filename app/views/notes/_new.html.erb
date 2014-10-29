@@ -1,4 +1,4 @@
-<%= form_for @note do |f| %>
+<%= form_for @note, remote: true do |f| %>
   <%= f.text_area :text, rows: 5, cols: 40, placeholder: "Add a note" %></p>
   <%= f.hidden_field :user_id, value: current_user.id %>
   <%= f.hidden_field :problem_id, value: @problem.id %>

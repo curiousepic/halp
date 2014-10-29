@@ -51,7 +51,7 @@ class ProblemsControllerTest < ActionController::TestCase
     setup { get :show, { id: problems(:one) }, {current_user_id: @user.id} }
     should respond_with(:ok)
     should render_template('show')
-    should render_template(partial: 'notes/_new')
+    # should render_template(partial: 'notes/_new')
   end
 
   context "request PATCH :resolve" do
@@ -71,7 +71,7 @@ class ProblemsControllerTest < ActionController::TestCase
       end
       should respond_with(:ok)
       should_eventually "fade out and remove the problem entry" do
-        # ???
+        # ??? Capy tests
       end
     end
   end

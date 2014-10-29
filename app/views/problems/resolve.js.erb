@@ -1,3 +1,7 @@
-$("#<%= dom_id(@problem) %>").effect("highlight", {}, 1000, function() {
+$("#<%= dom_id(@problem) %>").slideUp("slow", function() {
   $("#<%= dom_id(@problem) %>").remove();
 });
+
+//$("#<%#= dom_id(@problem) %>").effect("highlight", {}, 1000, function() {
+//  $("#<%#= dom_id(@problem) %>").remove();
+//});

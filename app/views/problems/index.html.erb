@@ -17,8 +17,9 @@
     <% if p.user == current_user %>
       <%= link_to "Resolve", resolve_path(p), method: :patch, remote: true, title: "resolve"  %>
     <% end %>
+      <br>
+      <br>
     </div>
-    <br>
   <% end %>
 <% end %>
 

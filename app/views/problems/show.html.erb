@@ -14,15 +14,18 @@
   <% end %>
 
 <h3>Notes</h3>
+<div id="notes">
 <% @sorted_notes = @problem.notes.sort_by(&:created_at) %>
 <% @sorted_notes.each do |n| %>
+  <div id="<%= dom_id(n) %>">
   <%= n.text %><br>
   <%= n.user.name %> at <%= n.created_at.to_formatted_s(format = :short) %>
   <br>
   <br>
+  </div>
 <% end %>
+</div>
 
 <%if logged_in?%>
-    <h3>Add a Note</h3>
     <%= render 'notes/new' %>
 <%end%>

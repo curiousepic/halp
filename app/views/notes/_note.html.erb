@@ -1,0 +1,6 @@
+<div id="<%= dom_id(@note) %>">
+  <%= @note.text %><br>
+  <%= @note.user.name %> at <%= @note.created_at.to_formatted_s(format = :short) %>
+  <br>
+  <br>
+</div>
