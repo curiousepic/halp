@@ -7,17 +7,20 @@ class NotesTest < ActionDispatch::IntegrationTest
       click_button "Log in"
     end
 
-    context "with a given problem" do
+    context "with a given problem you created" do
       setup do
         @problem = problems(:one)
       end
 
-      should "be able to add a note" do
-        visit problem_path(@problem)
-        fill_in "note_text", with: "whooo"
-        click_on "Submit"
+      should "be able to resolve it in index" do
+        visit root_path
+        assert page.has_content?(@problem.description[0...30])
 
-        assert page.has_content?("whooo")
+        within("#problem_#{@problem.id}") do
+          click_link "Resolve"
+        end
+        assert page.has_no_content?(@problem.description[0...30])
+
       end
 
 
