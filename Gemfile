@@ -63,3 +63,5 @@ end
 gem 'simplecov', :require => false, :group => :test
 
 gem 'rails_12factor', group: :production
+
+gem "paperclip", "~> 4.2"

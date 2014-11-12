@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141024204417) do
+ActiveRecord::Schema.define(version: 20141112033409) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,9 +31,13 @@ ActiveRecord::Schema.define(version: 20141024204417) do
     t.integer  "user_id"
     t.text     "description"
     t.text     "tried"
-    t.boolean  "resolved",    default: false
+    t.boolean  "resolved",           default: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   add_index "problems", ["user_id"], name: "index_problems_on_user_id", using: :btree

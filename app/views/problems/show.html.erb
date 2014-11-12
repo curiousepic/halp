@@ -6,6 +6,9 @@
 
 <h3>What <%= @problem.user.name %> has tried already</h3>
 <%= @problem.tried %>
+
+<h3>Screenshot</h3>
+<%= image_tag @problem.image.url %>
 <br>
 <br>
 
